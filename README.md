@@ -1,6 +1,6 @@
 # encyclopedia-page
 
-A skill for Claude that turns **any topic** into a single, self-contained HTML page laid out like an encyclopedia article, written so a non-expert can follow it.
+A skill for Claude that turns **any topic** into a single, self-contained HTML page laid out like a **Wikipedia-style** encyclopedia article, written so a non-expert can follow it. (Not affiliated with Wikipedia or the Wikimedia Foundation.)
 
 Ask "make me a page about *ofidio*", "explain the Ricci tensor as an encyclopedia article" or "página estilo enciclopedia sobre la fotosíntesis". You get one HTML file that includes:
 
@@ -56,6 +56,6 @@ The skill requires that every number and formula be recomputed, that references 
 
 ### En español
 
-Skill para Claude que convierte **cualquier tema** en una página HTML con aspecto de artículo de enciclopedia, pensada para que alguien no experto entienda el tema. Incluye ficha lateral, índice, figuras SVG hechas para el tema, analogías, cajas de mitos y erratas, glosario y referencias verificables. Para instalarla, usa los comandos de arriba y luego pide, por ejemplo: *"hazme una página estilo enciclopedia sobre ofidio"*.
+Skill para Claude que convierte **cualquier tema** en una página HTML **estilo Wikipedia** (artículo de enciclopedia, sin relación con Wikimedia), pensada para que alguien no experto entienda el tema. Incluye ficha lateral, índice, figuras SVG hechas para el tema, analogías, cajas de mitos y erratas, glosario y referencias verificables. Para instalarla, usa los comandos de arriba y luego pide, por ejemplo: *"hazme una página estilo enciclopedia sobre ofidio"*.
 
 License: MIT.
