@@ -1,0 +1,32 @@
+<script>
+(function(){
+  var data = [
+    {n:"Tetracheilostoma carlae", d:"la más pequeña", L:0.10},
+    {n:"Coral (Micrurus)", d:"típica", L:0.8},
+    {n:"Mapaná (Bothrops asper)", d:"adulto grande", L:2.0},
+    {n:"Cobra real", d:"la venenosa más larga", L:5.5},
+    {n:"Anaconda verde", d:"la más pesada", L:5.5},
+    {n:"Pitón reticulada", d:"la más larga viva", L:6.5},
+    {n:"Titanoboa (fósil)", d:"Cerrejón, Colombia", L:13}
+  ];
+  var svg = document.getElementById("sizeplot"), NS = "http://www.w3.org/2000/svg";
+  function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;}
+  function draw(){
+    var h = parseFloat(document.getElementById("c-h").value) || 1.7;
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var L0=210, R=600, top=18, row=36, max=14, X=function(v){return L0+v/max*(R-L0);};
+    for (var m=0;m<=14;m+=2){ el("line",{x1:X(m),x2:X(m),y1:top-4,y2:top+row*data.length+row-8,"class":"grid"}); el("text",{x:X(m),y:top+row*data.length+row+8,"text-anchor":"middle","font-size":11.5,"class":"tm"},m+" m"); }
+    var all = data.concat([{n:"Tú",d:"",L:h,me:true}]);
+    all.forEach(function(s,i){
+      var y = top + i*row;
+      el("text",{x:L0-10,y:y+14,"text-anchor":"end","font-size":12.5,"class":"t","font-weight":s.me?700:400},s.n);
+      if (s.d) el("text",{x:L0-10,y:y+27,"text-anchor":"end","font-size":10.5,"class":"tm"},s.d);
+      el("rect",{x:L0,y:y+4,width:Math.max(2,X(s.L)-L0),height:16,rx:3,fill:s.me?"#3366cc":(s.L>10?"#edab00":"#14866d")});
+      el("text",{x:X(s.L)+6,y:y+17,"font-size":12,"class":"t"},(s.L<1?Math.round(s.L*100)+" cm":s.L.toFixed(1).replace(".",",")+" m"));
+    });
+    var t = data[data.length-1].L / h, p = data[5].L / h;
+    document.getElementById("c-msg").textContent = "Una pitón reticulada grande mide unas " + p.toFixed(1).replace(".",",") + " veces tu estatura; Titanoboa, unas " + t.toFixed(1).replace(".",",") + " veces: como un bus articulado.";
+  }
+  document.getElementById("c-h").addEventListener("input", draw); draw();
+})();
+</script>

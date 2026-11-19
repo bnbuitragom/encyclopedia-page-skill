@@ -1,0 +1,17 @@
+{
+  "name": "encyclopedia-page",
+  "owner": { "name": "bnbuitragom" },
+  "metadata": {
+    "description": "Encyclopedia-style (wiki-like) explainer pages about any topic, as one self-contained HTML file.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "encyclopedia-page",
+      "description": "Turn any topic into an encyclopedia-style HTML explainer page with infobox, TOC, SVG figures, analogies, glossary and real references.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/encyclopedia-page"]
+    }
+  ]
+}
